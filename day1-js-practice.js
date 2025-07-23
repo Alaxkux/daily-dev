@@ -10,3 +10,9 @@ function greet(name) {
 
 console.log(greet("Al-ameen"));
 console.log(greet("Kuz"));
+
+function add(a, b) {
+  return a + b;
+}
+
+console.log("2 + 3 =", add(2, 3));

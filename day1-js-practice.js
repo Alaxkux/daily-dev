@@ -16,3 +16,12 @@ function add(a, b) {
 }
 
 console.log("2 + 3 =", add(2, 3));
+
+
+
+
+function reverseWord(word) {
+  return word.split("").reverse().join("");
+}
+
+console.log("Reverse of 'kuz' =>", reverseWord("kuz"));

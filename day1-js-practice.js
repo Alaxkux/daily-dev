@@ -48,3 +48,13 @@ function findFruit(arr, target) {
 
 console.log("Is 'banana' in the list?", findFruit(fruits, "banana"));
 console.log("Is 'grape' in the list?", findFruit(fruits, "grape"));
+
+
+const animals = ["goat", "dog", "cow", "sheep"];
+
+function reverseArray(arr) {
+  return arr.slice().reverse();
+}
+
+console.log("Original:", animals);
+console.log("Reversed:", reverseArray(animals));

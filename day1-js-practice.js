@@ -101,3 +101,44 @@ switch (day) {
   default:
     console.log("Invalid day");
 }
+// 🔹 1. Function to Check Voting Eligibility
+function canVote(age) {
+  if (age >= 18) {
+    return "You're eligible to vote.";
+  } else {
+    return `You need ${18 - age} more year(s) to vote.`;
+  }
+}
+
+console.log(canVote(17));  // You need 1 more year(s) to vote.
+console.log(canVote(20));  // You're eligible to vote.
+
+
+
+
+function checkNumber(num) {
+  if (num > 0) {
+    return "Positive";
+  } else if (num < 0) {
+    return "Negative";
+  } else {
+    return "Zero";
+  }
+}
+
+console.log(checkNumber(5));   // Positive
+console.log(checkNumber(-3));  // Negative
+console.log(checkNumber(0));   // Zero
+
+
+
+function login(username, password) {
+  if (username === "alaxkuz" && password === "1234") {
+    return "Login successful!";
+  } else {
+    return "Invalid credentials!";
+  }
+}
+
+console.log(login("alaxkuz", "1234"));   // Login successful!
+console.log(login("kuz", "0000"));       // Invalid credentials!

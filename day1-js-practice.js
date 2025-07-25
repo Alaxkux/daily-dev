@@ -58,3 +58,46 @@ function reverseArray(arr) {
 
 console.log("Original:", animals);
 console.log("Reversed:", reverseArray(animals));
+
+// Day 4: Conditionals
+
+// 1. Basic if-else
+let age = 17;
+
+if (age >= 18) {
+  console.log("You're an adult");
+} else {
+  console.log("You're still a minor");
+}
+
+// 2. else if ladder
+let score = 75;
+
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 70) {
+  console.log("Grade: B");
+} else if (score >= 50) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F");
+}
+
+// 3. switch-case
+let day = "Saturday";
+
+switch (day) {
+  case "Monday":
+  case "Tuesday":
+  case "Wednesday":
+  case "Thursday":
+  case "Friday":
+    console.log(day + " is a weekday");
+    break;
+  case "Saturday":
+  case "Sunday":
+    console.log(day + " is a weekend");
+    break;
+  default:
+    console.log("Invalid day");
+}

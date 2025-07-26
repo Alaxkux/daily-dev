@@ -45,3 +45,25 @@ const student = {
 };
 
 console.log(`${student.name}'s Status:`, student.getStatus());
+
+
+const account = {
+  name: "Al-ameen",
+  balance: 10000,
+  deposit(amount) {
+    this.balance += amount;
+    return `Deposited ₦${amount}. New balance: ₦${this.balance}`;
+  },
+  withdraw(amount) {
+    if (amount > this.balance) {
+      return "Insufficient funds 💀";
+    }
+    this.balance -= amount;
+    return `Withdrew ₦${amount}. New balance: ₦${this.balance}`;
+  },
+};
+
+console.log(account.deposit(3000));   // +₦3000
+console.log(account.withdraw(5000));  // -₦5000
+console.log(account.withdraw(10000)); // Not enough
+

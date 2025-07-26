@@ -27,3 +27,21 @@ console.log(car.start());
 // 3. Add a new property
 user.country = "Nigeria";
 console.log("Updated User:", user);
+
+
+const student = {
+  name: "Zayn",
+  level: 100,
+  gpa: 4.2,
+  getStatus: function () {
+    if (this.gpa >= 4.5) {
+      return "First Class 💎";
+    } else if (this.gpa >= 3.5) {
+      return "Second Class Upper 👍";
+    } else {
+      return "Keep pushing 🔁";
+    }
+  },
+};
+
+console.log(`${student.name}'s Status:`, student.getStatus());

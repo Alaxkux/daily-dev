@@ -1,6 +1,14 @@
-// Day 6: DOM manipulation
+// Day 6: Dark mode toggle
 
-function changeText() {
-  const heading = document.getElementById("greeting");
-  heading.textContent = "You clicked the button! 🎉";
+function toggleDarkMode() {
+  const body = document.body;
+  const greeting = document.getElementById("greeting");
+
+  body.classList.toggle("dark-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    greeting.textContent = "Welcome to Dark Mode 🌙";
+  } else {
+    greeting.textContent = "Welcome to Light Mode ☀️";
+  }
 }

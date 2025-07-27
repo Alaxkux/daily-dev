@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Day 6: DOM Basics</title>
+  <meta charset="UTF-8">
+  <title>Day 6: Dark Mode</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1 id="greeting">Hello there 👋</h1>
-  <button onclick="changeText()">Click Me</button>
+  <h1 id="greeting">Welcome to Light Mode ☀️</h1>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
   <script src="script.js"></script>
 </body>

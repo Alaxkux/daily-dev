@@ -66,3 +66,24 @@ function renderTasks() {
     taskList.appendChild(li);
   });
 }
+
+
+// Day 8: To-Do App with localStorage
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function addTask() {
+  const taskText = taskInput.value.trim();
+
+  if (taskText === "") {
+    alert("Please enter a task!");
+    return;
+  }
+
+  tasks.push(taskText);
+  taskInput.value = "";
+  saveTasks();
+  renderTasks();
+}

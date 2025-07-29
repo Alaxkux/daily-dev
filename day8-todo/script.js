@@ -34,3 +34,35 @@ function renderTasks() {
     taskList.appendChild(li);
   });
 }
+
+
+
+function renderTasks() {
+  taskList.innerHTML = "";
+
+  tasks.forEach((task, index) => {
+    const li = document.createElement("li");
+
+    // Task text
+    const taskText = document.createElement("span");
+    taskText.textContent = task;
+
+    // Delete button
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "❌";
+    delBtn.style.marginLeft = "15px";
+    delBtn.style.background = "red";
+    delBtn.style.color = "white";
+    delBtn.style.border = "none";
+    delBtn.style.cursor = "pointer";
+
+    delBtn.onclick = () => {
+      tasks.splice(index, 1);
+      renderTasks();
+    };
+
+    li.appendChild(taskText);
+    li.appendChild(delBtn);
+    taskList.appendChild(li);
+  });
+}

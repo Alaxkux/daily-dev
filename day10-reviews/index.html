@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 10: Feedback Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    form input, form textarea, form select, form button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      font-size: 16px;
+    }
+
+    .review {
+      background: #f2f2f2;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .review button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 8px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌟 Leave a Review</h1>
+
+  <form id="reviewForm">
+    <input type="text" id="name" placeholder="Your name" required>
+    <textarea id="message" placeholder="Write your review..." required></textarea>
+    <select id="emoji">
+      <option value="😊">😊 Happy</option>
+      <option value="😐">😐 Okay</option>
+      <option value="😡">😡 Angry</option>
+    </select>
+    <button type="submit">Submit Review</button>
+  </form>
+
+  <h2>🗂️ All Reviews</h2>
+  <div id="reviewList"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

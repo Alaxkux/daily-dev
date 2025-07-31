@@ -1,4 +1,4 @@
-// Day 10: Feedback Review App
+// Day 10: Feedback Review App (Improved)
 
 const form = document.getElementById("reviewForm");
 const reviewList = document.getElementById("reviewList");
@@ -21,10 +21,17 @@ function renderReviews() {
     const div = document.createElement("div");
     div.className = "review";
     div.innerHTML = `
-      <strong>${review.name}</strong> <span>${review.emoji}</span>
+      <strong>${review.name}</strong> <span>${review.emoji}</span><br>
+      <small>${review.timestamp}</small>
       <p>${review.message}</p>
       <button onclick="deleteReview(${index})">❌</button>
     `;
+
+    // Highlight the most recent review
+    if (index === reviews.length - 1) {
+      div.style.background = "#d4ffd4"; // light green
+    }
+
     reviewList.appendChild(div);
   });
 }
@@ -41,15 +48,16 @@ form.addEventListener("submit", function (e) {
   const name = document.getElementById("name").value.trim();
   const message = document.getElementById("message").value.trim();
   const emoji = document.getElementById("emoji").value;
+  const timestamp = new Date().toLocaleString();
 
   if (name === "" || message === "") return;
 
-  reviews.push({ name, message, emoji });
+  reviews.push({ name, message, emoji, timestamp });
   saveReviews();
   renderReviews();
 
   form.reset();
 });
 
-// Initial load
+// Initial render
 renderReviews();

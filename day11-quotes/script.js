@@ -28,3 +28,19 @@ function copyQuote() {
 
 newQuoteBtn.addEventListener("click", showQuote);
 copyBtn.addEventListener("click", copyQuote);
+
+
+const bgColors = ["#ffe0e0", "#e0f7fa", "#fff9c4", "#e8f5e9", "#ede7f6", "#fce4ec"];
+
+function showQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const random = quotes[randomIndex];
+  const color = bgColors[randomIndex % bgColors.length];
+
+  quoteBox.classList.remove("fade-in");
+  void quoteBox.offsetWidth;
+  quoteBox.textContent = random;
+  quoteBox.classList.add("fade-in");
+
+  document.body.style.backgroundColor = color;
+}

@@ -62,3 +62,19 @@ function spawnBox() {
 }
 
 startBtn.addEventListener("click", startGame);
+
+
+const difficultySelect = document.getElementById("difficulty");
+let boxDuration = 1000; // default for medium
+
+
+const difficulty = difficultySelect.value;
+
+if (difficulty === "easy") boxDuration = 1200;
+else if (difficulty === "hard") boxDuration = 600;
+else boxDuration = 1000;
+
+
+boxTimeout = setTimeout(() => {
+  box.remove();
+}, boxDuration);

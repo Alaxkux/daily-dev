@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+#gameArea {
+  position: relative;
+  margin: 20px auto;
+  width: 300px;
+  height: 300px;
+  background: #e0f7fa;
+  border: 2px solid #00acc1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.box {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: crimson;
+  border-radius: 50%;
+  cursor: pointer;
+}

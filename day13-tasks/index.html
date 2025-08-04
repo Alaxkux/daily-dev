@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 13: Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>✅ Task Manager</h1>
+
+  <form id="taskForm">
+    <input type="text" id="taskInput" placeholder="Enter a task..." required>
+    <button type="submit">Add</button>
+  </form>
+
+  <div class="filters">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="pending">Pending</button>
+    <button data-filter="completed">Completed</button>
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>

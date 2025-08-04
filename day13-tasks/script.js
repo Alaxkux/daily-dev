@@ -1,7 +1,9 @@
-// Day 13: Task Manager
+// Day 13++: Upgraded Task Manager
 
 const form = document.getElementById("taskForm");
 const input = document.getElementById("taskInput");
+const dueInput = document.getElementById("dueInput");
+const clearBtn = document.getElementById("clearBtn");
 const taskList = document.getElementById("taskList");
 const filterBtns = document.querySelectorAll(".filters button");
 
@@ -31,7 +33,10 @@ function renderTasks() {
     li.className = task.done ? "completed" : "";
 
     li.innerHTML = `
-      ${task.text}
+      <div>
+        <input type="text" value="${task.text}" onchange="editTask(${index}, this.value)">
+        ${task.dueDate ? `<div class="date">Due: ${task.dueDate}</div>` : ""}
+      </div>
       <div>
         <button onclick="toggleTask(${index})">${task.done ? "Undo" : "Done"}</button>
         <button onclick="deleteTask(${index})">Delete</button>
@@ -54,15 +59,32 @@ function deleteTask(index) {
   renderTasks();
 }
 
+function editTask(index, newText) {
+  tasks[index].text = newText;
+  saveTasks();
+}
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+
   const value = input.value.trim();
+  const dueDate = dueInput.value;
+
   if (!value) return;
 
-  tasks.push({ text: value, done: false });
+  tasks.push({ text: value, done: false, dueDate });
   saveTasks();
   input.value = "";
+  dueInput.value = "";
   renderTasks();
+});
+
+clearBtn.addEventListener("click", function () {
+  if (confirm("Are you sure you want to clear all tasks?")) {
+    tasks = [];
+    saveTasks();
+    renderTasks();
+  }
 });
 
 filterBtns.forEach(btn => {
@@ -74,5 +96,4 @@ filterBtns.forEach(btn => {
   });
 });
 
-// Initial load
 renderTasks();

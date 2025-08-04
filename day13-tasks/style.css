@@ -48,3 +48,15 @@ li {
   text-decoration: line-through;
   border-left-color: green;
 }
+
+
+li input[type="text"] {
+  width: 60%;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+li .date {
+  font-size: 0.8rem;
+  color: #666;
+}

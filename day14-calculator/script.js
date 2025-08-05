@@ -10,14 +10,18 @@ function updateDisplay() {
   display.value = expression;
 }
 
-function evaluateExpression() {
-  try {
-    expression = eval(expression).toString();
-  } catch {
-    expression = "Error";
+function addToHistory(entry) {
+  const list = document.getElementById("historyList");
+  const li = document.createElement("li");
+  li.textContent = entry;
+  list.prepend(li);
+
+  // Keep only latest 5 entries
+  while (list.children.length > 5) {
+    list.removeChild(list.lastChild);
   }
-  updateDisplay();
 }
+
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {

@@ -10,16 +10,15 @@ function updateDisplay() {
   display.value = expression;
 }
 
-function addToHistory(entry) {
-  const list = document.getElementById("historyList");
-  const li = document.createElement("li");
-  li.textContent = entry;
-  list.prepend(li);
-
-  // Keep only latest 5 entries
-  while (list.children.length > 5) {
-    list.removeChild(list.lastChild);
+function evaluateExpression() {
+  try {
+    const result = eval(expression).toString();
+    addToHistory(`${expression} = ${result}`);
+    expression = result;
+  } catch {
+    expression = "Error";
   }
+  updateDisplay();
 }
 
 
@@ -62,3 +61,14 @@ themeToggle.addEventListener("change", () => {
   document.body.classList.toggle("light");
   document.body.classList.toggle("dark");
 });
+function addToHistory(entry) {
+  const list = document.getElementById("historyList");
+  const li = document.createElement("li");
+  li.textContent = entry;
+  list.prepend(li);
+
+  // Keep only latest 5 entries
+  while (list.children.length > 5) {
+    list.removeChild(list.lastChild);
+  }
+}

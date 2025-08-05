@@ -5,36 +5,45 @@
   <title>Day 14: Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
   <div class="calculator">
-    <div class="display" id="display">0</div>
+    <div class="top-bar">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <input type="text" id="display" readonly>
+
     <div class="buttons">
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="append('%')">%</button>
-      <button onclick="append('/')">/</button>
-      <button onclick="deleteLast()">DEL</button>
+      <button class="btn">AC</button>
+      <button class="btn">(</button>
+      <button class="btn">)</button>
+      <button class="btn">/</button>
 
-      <button onclick="append('7')">7</button>
-      <button onclick="append('8')">8</button>
-      <button onclick="append('9')">9</button>
-      <button onclick="append('*')">*</button>
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn">*</button>
 
-      <button onclick="append('4')">4</button>
-      <button onclick="append('5')">5</button>
-      <button onclick="append('6')">6</button>
-      <button onclick="append('-')">-</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">-</button>
 
-      <button onclick="append('1')">1</button>
-      <button onclick="append('2')">2</button>
-      <button onclick="append('3')">3</button>
-      <button onclick="append('+')">+</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">+</button>
 
-      <button onclick="append('0')">0</button>
-      <button onclick="append('.')">.</button>
-      <button onclick="calculate()" class="equals">=</button>
+      <button class="btn zero">0</button>
+      <button class="btn">.</button>
+      <button class="btn" id="equal">=</button>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>

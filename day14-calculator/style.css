@@ -1,48 +1,120 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f1f1f1;
   height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
   margin: 0;
+  transition: background 0.3s;
+}
+
+body.dark {
+  background: #222;
+}
+
+body.light {
+  background: #eee;
 }
 
 .calculator {
   width: 300px;
-  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  padding: 20px;
+  background: var(--bg);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.display {
-  background: #222;
-  color: #0f0;
-  font-size: 2rem;
+body.dark .calculator {
+  background: #333;
+}
+
+body.light .calculator {
+  background: white;
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
   text-align: right;
-  padding: 20px;
+  padding: 10px;
+  border: none;
+  margin-bottom: 15px;
+  background: #000;
+  color: #0f0;
+  border-radius: 5px;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
-button {
+.btn {
   padding: 20px;
-  font-size: 1.2rem;
-  border: 1px solid #eee;
-  background: #fafafa;
+  font-size: 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
-button:hover {
-  background: #e0e0e0;
+.btn:hover {
+  background: #666;
 }
 
-button.equals {
+.zero {
   grid-column: span 2;
-  background: #0f0;
+}
+
+.top-bar {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+/* Theme toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
 }

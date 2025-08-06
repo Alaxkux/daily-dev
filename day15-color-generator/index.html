@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Day 15: Random Color Generator</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Generator</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
     <h1>Random Color Generator</h1>
     <div class="color-box" id="colorBox">#FFFFFF</div>
-    <button onclick="generateColor()">Generate Color</button>
-
-    <button onclick="copyColor()">Copy HEX</button>
-
-<h3>History</h3>
-<ul id="historyList"></ul>
-
+    <button id="generateBtn">Generate Color</button>
+    <button id="copyBtn">Copy Color</button>
+    <button id="clearHistoryBtn">Clear History</button>
+    
+    <h2>History</h2>
+    <ul id="historyList"></ul>
   </div>
 
   <script src="script.js"></script>

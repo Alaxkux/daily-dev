@@ -1,0 +1,14 @@
+### ✅ Day 15 - Color Generator
+
+**Features:**
+- Random color generation 🎨
+- Dynamic color display and body background update
+- Copy to clipboard functionality 📋
+- Saves history of generated colors in `localStorage`
+- Shows color history list
+- 🔥 Added: Clear History button
+
+**Extras:**
+- Fully responsive and minimal UI
+- Data persists even after page refresh
+

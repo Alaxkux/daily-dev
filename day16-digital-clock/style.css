@@ -1,26 +1,31 @@
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
   background: #111;
   color: white;
   font-family: Arial, sans-serif;
   margin: 0;
+  overflow: hidden;
 }
 
-.clock-container {
-  text-align: center;
+#clockWrapper {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  cursor: grab;
 }
 
 #time {
   font-size: 2rem;
-  margin-top: 10px;
+  text-align: center;
 }
 
 #date {
-  margin: 5px 0 20px;
   font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 button, select, input {
@@ -32,15 +37,15 @@ button, select, input {
   color: white;
 }
 
-button:hover, select:hover {
-  background: #666;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-h3 {
-  margin-top: 20px;
+li {
+  margin: 5px 0;
 }
 
-/* Light theme */
 .light-theme {
   background: #f9f9f9;
   color: #111;
@@ -51,9 +56,4 @@ h3 {
 .light-theme input {
   background: #ddd;
   color: #111;
-}
-
-.light-theme button:hover,
-.light-theme select:hover {
-  background: #bbb;
 }

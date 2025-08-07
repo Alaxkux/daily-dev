@@ -2,36 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Day 16: Clock Hub</title>
+  <title>Day 16: Clock Hub Pro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="clock-container">
+  <div id="clockWrapper" draggable="true">
     <canvas id="analogClock" width="300" height="300"></canvas>
     <div id="time">00:00:00</div>
     <div id="date">Loading date...</div>
-
-    <div class="alarm-section">
-      <h3>Set Alarm</h3>
-      <input type="time" id="alarmTime">
-      <button id="setAlarm">Set Alarm</button>
-      <button id="clearAlarm">Clear Alarm</button>
-    </div>
-
-    <div class="timezone-section">
-      <h3>World Time</h3>
-      <select id="timezoneSelect">
-        <option value="UTC">UTC</option>
-        <option value="America/New_York">New York</option>
-        <option value="Europe/London">London</option>
-        <option value="Asia/Tokyo">Tokyo</option>
-        <option value="Australia/Sydney">Sydney</option>
-      </select>
-      <div id="worldTime">Select a timezone...</div>
-    </div>
-
-    <button id="themeToggle">Toggle Theme</button>
   </div>
+
+  <div class="alarm-section">
+    <h3>Set Alarm</h3>
+    <input type="time" id="alarmTime">
+    <select id="alarmSound">
+      <option value="beep">Beep</option>
+      <option value="bell">Bell</option>
+      <option value="chime">Chime</option>
+    </select>
+    <button id="setAlarm">Add Alarm</button>
+    <ul id="alarmList"></ul>
+    <button id="clearAlarms">Clear All Alarms</button>
+  </div>
+
+  <div class="timezone-section">
+    <h3>World Time</h3>
+    <select id="timezoneSelect">
+      <option value="UTC">UTC</option>
+      <option value="America/New_York">New York</option>
+      <option value="Europe/London">London</option>
+      <option value="Asia/Tokyo">Tokyo</option>
+      <option value="Australia/Sydney">Sydney</option>
+    </select>
+    <div id="worldTime">Select a timezone...</div>
+  </div>
+
+  <button id="themeToggle">Toggle Theme</button>
+
+  <audio id="sound-beep" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+  <audio id="sound-bell" src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg"></audio>
+  <audio id="sound-chime" src="https://actions.google.com/sounds/v1/alarms/bugle_tune.ogg"></audio>
 
   <script src="script.js"></script>
 </body>

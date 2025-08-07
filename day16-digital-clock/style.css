@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.clock-container {
+  text-align: center;
+}
+
+#time {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+#date {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #666;
+}
+
+/* Light theme */
+.light-theme {
+  background: #f9f9f9;
+  color: #111;
+}
+
+.light-theme button {
+  background: #ddd;
+  color: #111;
+}
+
+.light-theme button:hover {
+  background: #bbb;
+}

@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Day 17: Pomodoro Pro</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro Pro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Pomodoro Pro ⏳</h1>
+  <div class="pomodoro-card">
+    <!-- Header -->
+    <div class="header">
+      <h2>Pomodoro Pro ⏳</h2>
+      <button id="toggleTheme" title="Toggle Theme">🌙</button>
+    </div>
 
-  <div class="timer-container">
-    <svg class="progress-ring" width="220" height="220">
-      <circle class="progress-ring__circle" stroke="red" stroke-width="10" fill="transparent" r="100" cx="110" cy="110"/>
-    </svg>
-    <div class="timer-display" id="timerDisplay">25:00</div>
+    <!-- Timer -->
+    <div class="timer-display">
+      <h1 id="time">25:00</h1>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings">
+      <label>Work (min):
+        <input id="workMinutes" type="number" value="25">
+      </label>
+      <label>Break (min):
+        <input id="breakMinutes" type="number" value="5">
+      </label>
+      <button id="applyBtn">Apply</button>
+    </div>
+
+    <!-- Counter -->
+    <p>Completed Pomodoros: <span id="completed">0</span></p>
   </div>
-
-  <div class="controls">
-    <button id="startPauseBtn">▶ Start</button>
-    <button id="resetBtn">🔄 Reset</button>
-  </div>
-
-  <div class="settings">
-    <label>Work (min): <input type="number" id="workInput" value="25" min="1"></label>
-    <label>Break (min): <input type="number" id="breakInput" value="5" min="1"></label>
-    <button id="applySettings">Apply</button>
-  </div>
-
-  <div class="stats">
-    <p>Completed Pomodoros: <span id="pomodoroCount">0</span></p>
-  </div>
-
-<div class="theme-toggle">
-  <button id="toggleTheme">🌙 Dark / ☀ Light</button>
-</div>
-
-<audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
-
 
   <script src="script.js"></script>
 </body>

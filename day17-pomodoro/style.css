@@ -1,75 +1,74 @@
 body {
-  background: #111;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding-top: 40px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Poppins', sans-serif;
 }
 
-.timer-container {
-  position: relative;
-  display: inline-block;
+.pomodoro-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  width: 320px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .timer-display {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.progress-ring__circle {
-  transition: stroke-dashoffset 0.35s;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
+.controls, .settings {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.settings label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
 }
 
 button {
-  background: #444;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  color: white;
-  border-radius: 5px;
   cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #ff6b6b;
+  color: white;
+  font-weight: bold;
 }
 
 button:hover {
-  background: #666;
+  background-color: #ff4757;
 }
 
-.settings {
-  margin-top: 20px;
+.dark {
+  background: linear-gradient(135deg, #232526, #414345);
+  color: white;
 }
 
-.stats {
-  margin-top: 20px;
+.dark button {
+  background-color: #444;
 }
 
-:root {
-  --bg-color: #111;
-  --text-color: white;
-  --button-bg: #444;
-  --button-hover: #666;
-}
-
-.light-theme {
-  --bg-color: white;
-  --text-color: black;
-  --button-bg: #ddd;
-  --button-hover: #bbb;
-}
-
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
-}
-
-button {
-  background: var(--button-bg);
-}
-
-button:hover {
-  background: var(--button-hover);
+.dark button:hover {
+  background-color: #666;
 }

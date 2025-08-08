@@ -46,3 +46,30 @@ button:hover {
 .stats {
   margin-top: 20px;
 }
+
+:root {
+  --bg-color: #111;
+  --text-color: white;
+  --button-bg: #444;
+  --button-hover: #666;
+}
+
+.light-theme {
+  --bg-color: white;
+  --text-color: black;
+  --button-bg: #ddd;
+  --button-hover: #bbb;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+button {
+  background: var(--button-bg);
+}
+
+button:hover {
+  background: var(--button-hover);
+}

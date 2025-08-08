@@ -86,3 +86,63 @@ applySettingsBtn.addEventListener('click', applySettings);
 
 updateTimerDisplay();
 updateProgressRing();
+
+
+const alarmSound = document.getElementById('alarmSound');
+const toggleThemeBtn = document.getElementById('toggleTheme');
+
+// Load saved theme
+if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light-theme');
+}
+
+// Theme toggle
+toggleThemeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+  localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+});
+
+// Request notification permission on load
+if (Notification.permission !== 'granted') {
+  Notification.requestPermission();
+}
+
+function notifyUser(message) {
+  if (Notification.permission === 'granted') {
+    new Notification(message);
+  }
+  alarmSound.currentTime = 0;
+  alarmSound.play();
+}
+
+// Modify timer end logic
+function startPauseTimer() {
+  if (isRunning) {
+    clearInterval(timerInterval);
+    isRunning = false;
+    startPauseBtn.textContent = "▶ Start";
+  } else {
+    isRunning = true;
+    startPauseBtn.textContent = "⏸ Pause";
+    timerInterval = setInterval(() => {
+      secondsRemaining--;
+      updateTimerDisplay();
+      updateProgressRing();
+
+      if (secondsRemaining <= 0) {
+        if (isWorkSession) {
+          pomodoroCount++;
+          localStorage.setItem('pomodoroCount', pomodoroCount);
+          pomodoroCountEl.textContent = pomodoroCount;
+          notifyUser("Work session done! Time for a break 🎉");
+          secondsRemaining = breakMinutes * 60;
+        } else {
+          notifyUser("Break is over! Back to work 💪");
+          secondsRemaining = workMinutes * 60;
+        }
+        isWorkSession = !isWorkSession;
+        updateTimerDisplay();
+      }
+    }, 1000);
+  }
+}

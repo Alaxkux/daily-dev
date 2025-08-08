@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 17: Pomodoro Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Pomodoro Pro ⏳</h1>
+
+  <div class="timer-container">
+    <svg class="progress-ring" width="220" height="220">
+      <circle class="progress-ring__circle" stroke="red" stroke-width="10" fill="transparent" r="100" cx="110" cy="110"/>
+    </svg>
+    <div class="timer-display" id="timerDisplay">25:00</div>
+  </div>
+
+  <div class="controls">
+    <button id="startPauseBtn">▶ Start</button>
+    <button id="resetBtn">🔄 Reset</button>
+  </div>
+
+  <div class="settings">
+    <label>Work (min): <input type="number" id="workInput" value="25" min="1"></label>
+    <label>Break (min): <input type="number" id="breakInput" value="5" min="1"></label>
+    <button id="applySettings">Apply</button>
+  </div>
+
+  <div class="stats">
+    <p>Completed Pomodoros: <span id="pomodoroCount">0</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

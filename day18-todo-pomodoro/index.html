@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 18 - To-Do + Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Master ⏳</h1>
+            <button id="theme-toggle">🌙</button>
+        </header>
+
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Enter a new task">
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+
+        <div class="filters">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="active">Active</button>
+            <button data-filter="completed">Completed</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="progress">
+            <p id="progressText">0/0 tasks completed</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
+    <title>Quote Generator Plus</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Random Quote Generator</h1>
-        <blockquote id="quote">Loading...</blockquote>
-        <p id="author"></p>
-        <button id="new-quote">New Quote</button>
-        <button id="copy-quote">Copy Quote</button>
-        <button id="toggle-theme">Toggle Theme</button>
+        <h1>Quote Generator+</h1>
+        <div id="quote-box">
+            <p id="quote">Loading quote...</p>
+            <p id="author"></p>
+        </div>
+        <input type="text" id="search-author" placeholder="Search by author...">
+        <div class="buttons">
+            <button id="new-quote">New Quote</button>
+            <button id="copy-quote">Copy 📋</button>
+            <button id="tweet-quote">Tweet 🐦</button>
+            <button id="save-quote">❤️ Save</button>
+        </div>
+        <h2>Favorites</h2>
+        <ul id="favorites-list"></ul>
     </div>
     <script src="script.js"></script>
 </body>
